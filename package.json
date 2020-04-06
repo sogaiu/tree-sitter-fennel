@@ -1,0 +1,27 @@
+{
+  "name": "tree-sitter-fennel",
+  "version": "0.0.1",
+  "description": "Fennel grammar for tree-sitter",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tree-sitter generate && npx node-gyp build",
+    "test": "npx tree-sitter test"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "nan": "2.14.0",
+    "web-tree-sitter": "0.16.2"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "0.16.5"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.fennel",
+      "file-types": [
+        "fnl"
+      ]
+    }
+  ]
+}
