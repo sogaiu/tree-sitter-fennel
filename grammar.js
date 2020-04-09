@@ -17,6 +17,7 @@ const STRING_DOUBLE_QUOTE_CONTENT =
       repeat(choice(/[^\\"]/,
                     /\\(.|\n)/)); // thanks to tree-sitter-haskell
 
+// XXX: may be obsolete?
 const STRING_SINGLE_QUOTE_CONTENT =
       repeat(choice(/[^\\']/,
                     /\\(.|\n)/)); // thanks to tree-sitter-haskell
@@ -67,7 +68,6 @@ module.exports = grammar({
       prec(5, choice($._dec,
                      $._hex)),
 
-    // XXX: doesn't seem quite right?
     _dec: $ =>
       token(seq(repeat('_'),
                 optional(SIGN),
@@ -91,7 +91,6 @@ module.exports = grammar({
                              repeat1(DIGIT),
                              repeat('_'))))),
 
-    // XXX: doesn't seem quite right?
     _hex: $ =>
       token(seq(repeat('_'),
                 optional(SIGN),
@@ -117,6 +116,7 @@ module.exports = grammar({
       token(choice(seq('"',
                        STRING_DOUBLE_QUOTE_CONTENT,
                        '"'),
+                   // XXX: this may no longer be relevant
                    seq("'",
                        STRING_SINGLE_QUOTE_CONTENT,
                        "'"))),
@@ -142,7 +142,7 @@ module.exports = grammar({
           repeat($._form),
           '}'),
 
-    // macro
+    // macro-related
 
     syntax_quote_form: $ =>
       seq('`',
