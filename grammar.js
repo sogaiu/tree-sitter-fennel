@@ -7,8 +7,8 @@ const HEX_DIGIT =
       /[0-9A-F]/;
 
 // symbols and keywords
-const SYM_CHAR_NO_DIGIT =
-      /[a-zA-Z!$%&#*+.\/:<=>?^_-]/;
+const SYM_CHAR_NO_DIGIT_NO_COLON =
+      /[a-zA-Z!$%&#*+.\/<=>?^_-]/;
 const SYM_CHAR =
       /[0-9a-zA-Z!$%&#*+.\/:<=>?^_-]/;
 
@@ -57,8 +57,8 @@ module.exports = grammar({
              'true'),
 
     keyword: $ =>
-      token(seq(':'),
-            repeat(SYM_CHAR)),
+      token(seq(':',
+                repeat(SYM_CHAR))),
 
     nil: $ =>
       'nil',
@@ -122,7 +122,7 @@ module.exports = grammar({
                        "'"))),
 
     symbol: $ =>
-      token(seq(SYM_CHAR_NO_DIGIT,
+      token(seq(SYM_CHAR_NO_DIGIT_NO_COLON,
                 repeat(SYM_CHAR))),
 
     // collection-ish things
