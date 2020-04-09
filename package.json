@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tree-sitter generate && npx node-gyp build",
-    "install": "npx tree-sitter generate && npx node-gyp configure && npx node-gyp rebuild"
+    "fresh-build": "npx tree-sitter generate && npx node-gyp configure && npx node-gyp rebuild"
   },
   "author": "",
   "license": "",
