@@ -8,9 +8,9 @@ const HEX_DIGIT =
 
 // symbols and keywords
 const SYM_CHAR_NO_DIGIT_NO_COLON =
-      /[a-zA-Z!$%&#*+.\/<=>?^_-]/;
+      /[a-zA-Z!$%&#*+\-.\/<=>?^_~λ]/;
 const SYM_CHAR =
-      /[0-9a-zA-Z!$%&#*+.\/:<=>?^_-]/;
+      /[0-9a-zA-Z!$%&#*+\-.\/:<=>?^_~λ]/;
 
 // strings
 const STRING_DOUBLE_QUOTE_CONTENT =
