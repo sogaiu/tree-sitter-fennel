@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-fennel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fennel grammar for tree-sitter",
   "main": "bindings/node",
   "scripts": {
@@ -14,7 +14,7 @@
     "web-tree-sitter": "0.19.1"
   },
   "devDependencies": {
-    "tree-sitter-cli": "0.19.3"
+    "tree-sitter-cli": "0.19.4"
   },
   "tree-sitter": [
     {
